@@ -1,42 +1,66 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
+import calculator from '../logic/calculator';
+// import operate from '../logic/operate';
 
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: 0,
+      // eslint-disable-next-line react/no-unused-state
+      next: 0,
+      // eslint-disable-next-line react/no-unused-state
+      operation: '',
+    };
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onOperationHandler = this.onOperationHandler.bind(this);
+  }
+
+  onChangeHandler = (e) => {
+    const value = e.target.getAttribute('value');
+    console.log(e.target.innerText);
+    console.log(e.target.getAttribute('value'));
+    this.setState((state) => calculator(state, value));
+  }
+
+  onOperationHandler = (e) => {
+    const value = e.target.getAttribute('value');
+    this.setState((state) => calculator(state, value));
   }
 
   render() {
+    const { total } = this.state;
+
     return (
       <CalculatorContainer>
-        <Display>0</Display>
-        <Clear>AC</Clear>
-        <PlusMinus>+/-</PlusMinus>
-        <Percentage>%</Percentage>
-        <Divide>/</Divide>
-        <Multiple>*</Multiple>
-        <Minus>-</Minus>
-        <Add>+</Add>
-        <Equal>=</Equal>
-        <Zero>0</Zero>
-        <Number>7</Number>
-        <Number>8</Number>
-        <Number>9</Number>
-        <Number>4</Number>
-        <Number>5</Number>
-        <Number>6</Number>
-        <Number>1</Number>
-        <Number>2</Number>
-        <Number>3</Number>
-        <Dot>.</Dot>
+        <Display>{ total }</Display>
+        <Clear onClick={this.onChangeHandler}>AC</Clear>
+        <PlusMinus onClick={this.onChangeHandler} value="+/-">+/-</PlusMinus>
+        <Percentage onClick={this.onOperationHandler} value="%">%</Percentage>
+        <Divide onClick={this.onOperationHandler} value="÷">÷</Divide>
+        <Multiple onClick={this.onOperationHandler} value="x">*</Multiple>
+        <Minus onClick={this.onOperationHandler} value="-">-</Minus>
+        <Add onClick={this.onOperationHandler} value="+">+</Add>
+        <Equal onClick={this.onChangeHandler} value="=">=</Equal>
+        <Zero onClick={this.onChangeHandler} value="0">0</Zero>
+        <Number onClick={this.onChangeHandler} value="7">7</Number>
+        <Number onClick={this.onChangeHandler} value="8">8</Number>
+        <Number onClick={this.onChangeHandler} value="9">9</Number>
+        <Number onClick={this.onChangeHandler} value="4">4</Number>
+        <Number onClick={this.onChangeHandler} value="5">5</Number>
+        <Number onClick={this.onChangeHandler} value="6">6</Number>
+        <Number onClick={this.onChangeHandler} value="1">1</Number>
+        <Number onClick={this.onChangeHandler} value="2">2</Number>
+        <Number onClick={this.onChangeHandler} value="3">3</Number>
+        <Dot onClick={this.onChangeHandler}>.</Dot>
       </CalculatorContainer>
     );
   }
 }
 
-const CalculatorContainer = styled.div`
+const CalculatorContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 60px);
   grid-template-rows: repeat(6, 50px);
