@@ -1,42 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
+import calculator from '../logic/calculator';
 
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: 0,
+      next: 0,
+    };
+    this.onClickHandler = this.onClickHandler.bind(this);
+  }
+
+  onClickHandler = (e) => {
+    const value = e.target.getAttribute('value');
+    this.setState((state) => calculator(state, value));
   }
 
   render() {
+    const { total } = this.state;
+    const { next } = this.state;
+    const display = next || total || '0';
+
     return (
       <CalculatorContainer>
-        <Display>0</Display>
-        <Clear>AC</Clear>
-        <PlusMinus>+/-</PlusMinus>
-        <Percentage>%</Percentage>
-        <Divide>/</Divide>
-        <Multiple>*</Multiple>
-        <Minus>-</Minus>
-        <Add>+</Add>
-        <Equal>=</Equal>
-        <Zero>0</Zero>
-        <Number>7</Number>
-        <Number>8</Number>
-        <Number>9</Number>
-        <Number>4</Number>
-        <Number>5</Number>
-        <Number>6</Number>
-        <Number>1</Number>
-        <Number>2</Number>
-        <Number>3</Number>
-        <Dot>.</Dot>
+        <Display>{ display }</Display>
+        <Clear onClick={this.onClickHandler} value="AC">AC</Clear>
+        <PlusMinus onClick={this.onClickHandler} value="+/-">+/-</PlusMinus>
+        <Percentage onClick={this.onClickHandler} value="%">%</Percentage>
+        <Divide onClick={this.onClickHandler} value="÷">÷</Divide>
+        <Multiple onClick={this.onClickHandler} value="x">*</Multiple>
+        <Minus onClick={this.onClickHandler} value="-">-</Minus>
+        <Add onClick={this.onClickHandler} value="+">+</Add>
+        <Equal onClick={this.onClickHandler} value="=">=</Equal>
+        <Zero onClick={this.onClickHandler} value="0">0</Zero>
+        <Number onClick={this.onClickHandler} value="7">7</Number>
+        <Number onClick={this.onClickHandler} value="8">8</Number>
+        <Number onClick={this.onClickHandler} value="9">9</Number>
+        <Number onClick={this.onClickHandler} value="4">4</Number>
+        <Number onClick={this.onClickHandler} value="5">5</Number>
+        <Number onClick={this.onClickHandler} value="6">6</Number>
+        <Number onClick={this.onClickHandler} value="1">1</Number>
+        <Number onClick={this.onClickHandler} value="2">2</Number>
+        <Number onClick={this.onClickHandler} value="3">3</Number>
+        <Dot onClick={this.onClickHandler} value=".">.</Dot>
       </CalculatorContainer>
     );
   }
 }
 
-const CalculatorContainer = styled.div`
+const CalculatorContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 60px);
   grid-template-rows: repeat(6, 50px);
@@ -64,6 +78,10 @@ const Clear = styled.div`
   border: 1px solid ${colors.gray};
   color: ${colors.black};
   grid-column: 1 / 1;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const PlusMinus = styled.div`
@@ -73,6 +91,10 @@ const PlusMinus = styled.div`
   border: 1px solid ${colors.gray};
   color:  ${colors.black} ;
   grid-column: 2 / 2;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Percentage = styled.div`
@@ -82,6 +104,10 @@ const Percentage = styled.div`
   border: 1px solid ${colors.gray};
   color:  ${colors.black} ;
   grid-column: 3 / 3;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Divide = styled.div`
@@ -89,9 +115,13 @@ const Divide = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Multiple = styled.div`
@@ -99,10 +129,14 @@ const Multiple = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 3 / 3;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Minus = styled.div`
@@ -110,10 +144,14 @@ const Minus = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 4 / 4;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Add = styled.div`
@@ -121,10 +159,14 @@ const Add = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 5 / 5;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Equal = styled.div`
@@ -132,10 +174,14 @@ const Equal = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 6 / span 1;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Zero = styled.div`
@@ -143,9 +189,13 @@ const Zero = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 6 / span 1;
   grid-column: 1 / span 2;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Number = styled.div`
@@ -153,7 +203,11 @@ const Number = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Dot = styled.div`
@@ -161,5 +215,9 @@ display: flex;
 justify-content: center;
 border: 1px solid ${colors.gray};
 align-items: center;
-color:  ${colors.black} ;
+color:  ${colors.black};
+cursor: pointer;
+&:hover {
+    color: ${colors.yellow};
+  }
 `;
