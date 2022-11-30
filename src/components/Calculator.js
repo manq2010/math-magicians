@@ -78,6 +78,10 @@ const Clear = styled.div`
   border: 1px solid ${colors.gray};
   color: ${colors.black};
   grid-column: 1 / 1;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const PlusMinus = styled.div`
@@ -87,6 +91,10 @@ const PlusMinus = styled.div`
   border: 1px solid ${colors.gray};
   color:  ${colors.black} ;
   grid-column: 2 / 2;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Percentage = styled.div`
@@ -96,6 +104,10 @@ const Percentage = styled.div`
   border: 1px solid ${colors.gray};
   color:  ${colors.black} ;
   grid-column: 3 / 3;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Divide = styled.div`
@@ -103,9 +115,13 @@ const Divide = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Multiple = styled.div`
@@ -113,10 +129,14 @@ const Multiple = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 3 / 3;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Minus = styled.div`
@@ -124,10 +144,14 @@ const Minus = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 4 / 4;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Add = styled.div`
@@ -135,10 +159,14 @@ const Add = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 5 / 5;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Equal = styled.div`
@@ -146,10 +174,14 @@ const Equal = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 6 / span 1;
   grid-column: 4 / 4;
   background: ${colors.yellow};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.gray};
+  }
 `;
 
 const Zero = styled.div`
@@ -157,9 +189,13 @@ const Zero = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
   grid-row: 6 / span 1;
   grid-column: 1 / span 2;
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Number = styled.div`
@@ -167,7 +203,11 @@ const Number = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${colors.gray};
-  color:  ${colors.black} ;
+  color:  ${colors.black};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 const Dot = styled.div`
@@ -175,5 +215,9 @@ display: flex;
 justify-content: center;
 border: 1px solid ${colors.gray};
 align-items: center;
-color:  ${colors.black} ;
+color:  ${colors.black};
+cursor: pointer;
+&:hover {
+    color: ${colors.yellow};
+  }
 `;
