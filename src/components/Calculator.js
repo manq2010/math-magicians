@@ -2,59 +2,49 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import calculator from '../logic/calculator';
-// import operate from '../logic/operate';
 
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       total: 0,
-      // eslint-disable-next-line react/no-unused-state
       next: 0,
-      // eslint-disable-next-line react/no-unused-state
-      operation: '',
     };
-    this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.onOperationHandler = this.onOperationHandler.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
   }
 
-  onChangeHandler = (e) => {
-    const value = e.target.getAttribute('value');
-    console.log(e.target.innerText);
-    console.log(e.target.getAttribute('value'));
-    this.setState((state) => calculator(state, value));
-  }
-
-  onOperationHandler = (e) => {
+  onClickHandler = (e) => {
     const value = e.target.getAttribute('value');
     this.setState((state) => calculator(state, value));
   }
 
   render() {
     const { total } = this.state;
+    const { next } = this.state;
+    const display = next || total || '0';
 
     return (
       <CalculatorContainer>
-        <Display>{ total }</Display>
-        <Clear onClick={this.onChangeHandler}>AC</Clear>
-        <PlusMinus onClick={this.onChangeHandler} value="+/-">+/-</PlusMinus>
-        <Percentage onClick={this.onOperationHandler} value="%">%</Percentage>
-        <Divide onClick={this.onOperationHandler} value="÷">÷</Divide>
-        <Multiple onClick={this.onOperationHandler} value="x">*</Multiple>
-        <Minus onClick={this.onOperationHandler} value="-">-</Minus>
-        <Add onClick={this.onOperationHandler} value="+">+</Add>
-        <Equal onClick={this.onChangeHandler} value="=">=</Equal>
-        <Zero onClick={this.onChangeHandler} value="0">0</Zero>
-        <Number onClick={this.onChangeHandler} value="7">7</Number>
-        <Number onClick={this.onChangeHandler} value="8">8</Number>
-        <Number onClick={this.onChangeHandler} value="9">9</Number>
-        <Number onClick={this.onChangeHandler} value="4">4</Number>
-        <Number onClick={this.onChangeHandler} value="5">5</Number>
-        <Number onClick={this.onChangeHandler} value="6">6</Number>
-        <Number onClick={this.onChangeHandler} value="1">1</Number>
-        <Number onClick={this.onChangeHandler} value="2">2</Number>
-        <Number onClick={this.onChangeHandler} value="3">3</Number>
-        <Dot onClick={this.onChangeHandler}>.</Dot>
+        <Display>{ display }</Display>
+        <Clear onClick={this.onClickHandler} value="AC">AC</Clear>
+        <PlusMinus onClick={this.onClickHandler} value="+/-">+/-</PlusMinus>
+        <Percentage onClick={this.onClickHandler} value="%">%</Percentage>
+        <Divide onClick={this.onClickHandler} value="÷">÷</Divide>
+        <Multiple onClick={this.onClickHandler} value="x">*</Multiple>
+        <Minus onClick={this.onClickHandler} value="-">-</Minus>
+        <Add onClick={this.onClickHandler} value="+">+</Add>
+        <Equal onClick={this.onClickHandler} value="=">=</Equal>
+        <Zero onClick={this.onClickHandler} value="0">0</Zero>
+        <Number onClick={this.onClickHandler} value="7">7</Number>
+        <Number onClick={this.onClickHandler} value="8">8</Number>
+        <Number onClick={this.onClickHandler} value="9">9</Number>
+        <Number onClick={this.onClickHandler} value="4">4</Number>
+        <Number onClick={this.onClickHandler} value="5">5</Number>
+        <Number onClick={this.onClickHandler} value="6">6</Number>
+        <Number onClick={this.onClickHandler} value="1">1</Number>
+        <Number onClick={this.onClickHandler} value="2">2</Number>
+        <Number onClick={this.onClickHandler} value="3">3</Number>
+        <Dot onClick={this.onClickHandler} value=".">.</Dot>
       </CalculatorContainer>
     );
   }
