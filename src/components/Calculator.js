@@ -1,54 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import calculator from '../logic/calculator';
-
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: 0,
-      next: 0,
-    };
-    this.onClickHandler = this.onClickHandler.bind(this);
-  }
-
-  onClickHandler = (e) => {
-    const value = e.target.getAttribute('value');
-    this.setState((state) => calculator(state, value));
-  }
-
-  render() {
-    const { total } = this.state;
-    const { next } = this.state;
-    const display = next || total || '0';
-
-    return (
-      <CalculatorContainer>
-        <Display>{ display }</Display>
-        <Clear onClick={this.onClickHandler} value="AC">AC</Clear>
-        <PlusMinus onClick={this.onClickHandler} value="+/-">+/-</PlusMinus>
-        <Percentage onClick={this.onClickHandler} value="%">%</Percentage>
-        <Divide onClick={this.onClickHandler} value="÷">÷</Divide>
-        <Multiple onClick={this.onClickHandler} value="x">*</Multiple>
-        <Minus onClick={this.onClickHandler} value="-">-</Minus>
-        <Add onClick={this.onClickHandler} value="+">+</Add>
-        <Equal onClick={this.onClickHandler} value="=">=</Equal>
-        <Zero onClick={this.onClickHandler} value="0">0</Zero>
-        <Number onClick={this.onClickHandler} value="7">7</Number>
-        <Number onClick={this.onClickHandler} value="8">8</Number>
-        <Number onClick={this.onClickHandler} value="9">9</Number>
-        <Number onClick={this.onClickHandler} value="4">4</Number>
-        <Number onClick={this.onClickHandler} value="5">5</Number>
-        <Number onClick={this.onClickHandler} value="6">6</Number>
-        <Number onClick={this.onClickHandler} value="1">1</Number>
-        <Number onClick={this.onClickHandler} value="2">2</Number>
-        <Number onClick={this.onClickHandler} value="3">3</Number>
-        <Dot onClick={this.onClickHandler} value=".">.</Dot>
-      </CalculatorContainer>
-    );
-  }
-}
 
 const CalculatorContainer = styled.section`
   display: grid;
@@ -60,7 +13,7 @@ const CalculatorContainer = styled.section`
   margin: 100px auto;
 `;
 
-const Display = styled.div`
+const Display = styled.article`
   display: flex;
   justify-content: end;
   padding: 0 10px;
@@ -221,3 +174,43 @@ cursor: pointer;
     color: ${colors.yellow};
   }
 `;
+
+function Calculator() {
+  const [state, setState] = useState({ total: 0, next: 0, operation: '' });
+
+  const onClickHandler = (elem) => {
+    const value = elem.getAttribute('value');
+    setState(calculator(state, value));
+  };
+
+  const { total, next } = state;
+
+  return (
+    <CalculatorContainer>
+      <Display>
+        {next || total || 0}
+      </Display>
+      <Clear onClick={(e) => onClickHandler(e.target)} value="AC">AC</Clear>
+      <PlusMinus onClick={(e) => onClickHandler(e.target)} value="+/-">+/-</PlusMinus>
+      <Percentage onClick={(e) => onClickHandler(e.target)} value="%">%</Percentage>
+      <Divide onClick={(e) => onClickHandler(e.target)} value="÷">÷</Divide>
+      <Multiple onClick={(e) => onClickHandler(e.target)} value="x">*</Multiple>
+      <Minus onClick={(e) => onClickHandler(e.target)} value="-">-</Minus>
+      <Add onClick={(e) => onClickHandler(e.target)} value="+">+</Add>
+      <Equal onClick={(e) => onClickHandler(e.target)} value="=">=</Equal>
+      <Zero onClick={(e) => onClickHandler(e.target)} value="0">0</Zero>
+      <Number onClick={(e) => onClickHandler(e.target)} value="7">7</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="8">8</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="9">9</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="4">4</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="5">5</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="6">6</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="1">1</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="2">2</Number>
+      <Number onClick={(e) => onClickHandler(e.target)} value="3">3</Number>
+      <Dot onClick={(e) => onClickHandler(e.target)} value=".">.</Dot>
+    </CalculatorContainer>
+  );
+}
+
+export default Calculator;
