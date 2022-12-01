@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import calculator from '../logic/calculator';
@@ -185,14 +185,11 @@ function Calculator() {
 
   const { total, next } = state;
 
-  useEffect(() => {
-    const display = next || total || 0;
-    document.getElementsByClassName('display')[0].innerHTML = display;
-  });
-
   return (
     <CalculatorContainer>
-      <Display className="display" />
+      <Display>
+        {next || total || 0}
+      </Display>
       <Clear onClick={(e) => onClickHandler(e.target)} value="AC">AC</Clear>
       <PlusMinus onClick={(e) => onClickHandler(e.target)} value="+/-">+/-</PlusMinus>
       <Percentage onClick={(e) => onClickHandler(e.target)} value="%">%</Percentage>
