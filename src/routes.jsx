@@ -1,18 +1,14 @@
-
 // LIBRARIES
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
-// import Calculator from './components/Calculator';
 import NotFound from './components/NotFound/NotFound';
 import Homepage from './pages/Homepage';
 import Footer from './components/Footer/Footer';
 
 // Pages
-// import About from './pages/About';
-// import NotMatch from './pages/NotMatch';
 import Calculatorpage from './pages/Calculatorpage';
 import Qoutepage from './pages/Qoutepage';
 
