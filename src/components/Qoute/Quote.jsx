@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Quote.css';
 
 function Quote() {
   const [quote, setQuote] = useState({
@@ -14,11 +15,16 @@ function Quote() {
 
   return (
     <div className="qoutes">
-      <button onClick={() => randomQuate()} type="button">Next Quote</button>
       <blockquote>
-        <p>{quote.quoteText}</p>
+        <p>
+          {quote.quoteText}
+          {' '}
+          -
+          {' '}
+          {quote.author}
+        </p>
       </blockquote>
-      <p>{quote.author}</p>
+      <button onClick={() => randomQuate()} type="button">Next Quote</button>
     </div>
 
   );

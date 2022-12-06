@@ -37,9 +37,9 @@ const Navbar = () => {
     <nav className="navBar">
       <button type="button" onClick={handleToggle}>
         {navbarOpen ? (
-          <MdClose style={{ color: '#fff', width: '40px', height: '40px' }} />
+          <MdClose style={{ color: '#fff', width: '30px', height: '30px' }} />
         ) : (
-          <FiMenu style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
+          <FiMenu style={{ color: '#7b7b7b', width: '30px', height: '30px' }} />
         )}
       </button>
       <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
@@ -57,7 +57,7 @@ const Navbar = () => {
           {links.map((link) => (
             <li
               key={link.id}
-              // onClick={() => closeMenu()}
+              className="nav-item"
               aria-hidden="true"
             >
               <NavLink to={link.path} activeClassName="active-link" exact>
