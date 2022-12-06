@@ -1,12 +1,10 @@
 import React from 'react';
-import Calculator from './components/Calculator';
+import AppRoutes from './routes';
 
-function App() {
-  return (
-    <div>
-      <Calculator />
-    </div>
-  );
-}
+const App = () => (
+  <React.StrictMode>
+    <AppRoutes />
+  </React.StrictMode>
+);
 
 export default App;

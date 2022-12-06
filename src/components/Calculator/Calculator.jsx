@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../theme';
-import calculator from '../logic/calculator';
+import { colors } from '../../theme';
+import calculator from '../../logic/calculator';
 
 const CalculatorContainer = styled.section`
   display: grid;
@@ -10,7 +10,7 @@ const CalculatorContainer = styled.section`
   border: 1px solid ${colors.gray};
   width: fit-content;
   height: fit-content;
-  margin: 100px auto;
+  margin: 2rem auto;
 `;
 
 const Display = styled.article`

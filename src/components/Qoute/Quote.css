@@ -1,0 +1,21 @@
+.qoutes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+button {
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #3fffd2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+blockquote {
+  padding: 3rem;
+  width: fit-content;
+}

@@ -37,3 +37,27 @@
     transform: rotate(360deg);
   }
 }
+
+.home-page {
+  margin-top: 3em;
+  padding: 0 2rem;
+}
+
+.calculator-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: auto auto 1.5rem auto;
+}
+
+@media (min-width: 768px) {
+  .calculator-page {
+    flex-direction: row;
+  }
+
+  .title {
+    margin: 2rem auto;
+  }
+}

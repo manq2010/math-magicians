@@ -1,0 +1,98 @@
+/* sidebar Nav */
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navBar button {
+  width: fit-content;
+  margin: 1rem 0 1rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  color: #3fffd2;
+}
+
+.menuNav {
+  list-style: none;
+  display: none;
+  position: relative;
+}
+
+.menuNav li {
+  margin: 1.5rem 0 1rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+}
+
+a {
+  color: #000;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.showMenu {
+  display: block;
+  position: fixed;
+  margin-top: 0;
+  padding-top: 4rem;
+  left: 0;
+  width: 100%;
+  background: darkcyan;
+  height: 100vh;
+  z-index: 1;
+}
+
+.navMenuDesktop {
+  display: none;
+  gap: 2rem;
+  margin-top: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.navLinks > li > a {
+  color: #3fffd2;
+  font-size: 1.3rem;
+}
+
+.nav-item {
+  position: relative;
+  color: #000;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.7s;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .menuNav,
+  .navBar > button {
+    display: none;
+  }
+
+  .navMenuDesktop {
+    display: flex;
+  }
+}
