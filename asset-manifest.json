@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/manq2010/math-magicians/static/css/main.942cb99f.css",
-    "main.js": "/manq2010/math-magicians/static/js/main.16bbd49f.js",
+    "main.js": "/manq2010/math-magicians/static/js/main.e04f92ce.js",
     "static/js/787.d4ded463.chunk.js": "/manq2010/math-magicians/static/js/787.d4ded463.chunk.js",
     "index.html": "/manq2010/math-magicians/index.html",
     "main.942cb99f.css.map": "/manq2010/math-magicians/static/css/main.942cb99f.css.map",
-    "main.16bbd49f.js.map": "/manq2010/math-magicians/static/js/main.16bbd49f.js.map",
+    "main.e04f92ce.js.map": "/manq2010/math-magicians/static/js/main.e04f92ce.js.map",
     "787.d4ded463.chunk.js.map": "/manq2010/math-magicians/static/js/787.d4ded463.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.942cb99f.css",
-    "static/js/main.16bbd49f.js"
+    "static/js/main.e04f92ce.js"
   ]
 }
