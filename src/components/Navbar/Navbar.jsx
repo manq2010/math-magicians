@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { MdClose } from 'react-icons/md';
 import { FiMenu } from 'react-icons/fi';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import Footer from '../Footer/Footer';
 
 const Navbar = () => {
   const links = [
@@ -34,40 +35,44 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navBar">
-      <button type="button" onClick={handleToggle}>
-        {navbarOpen ? (
-          <MdClose style={{ color: '#fff', width: '30px', height: '30px' }} />
-        ) : (
-          <FiMenu style={{ color: '#7b7b7b', width: '30px', height: '30px' }} />
-        )}
-      </button>
-      <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
-        {links.map((link) => (
-          <li key={link.id} onClick={() => closeMenu()} aria-hidden="true">
-            <NavLink to={link.path} activeClassName="active-link" exact>
-              {link.text}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      <ul className="navMenuDesktop">
-        <Logo />
-        <div className="navLinks">
+    <>
+      <nav className="navBar">
+        <button type="button" onClick={handleToggle}>
+          {navbarOpen ? (
+            <MdClose style={{ color: '#fff', width: '30px', height: '30px' }} />
+          ) : (
+            <FiMenu style={{ color: '#7b7b7b', width: '30px', height: '30px' }} />
+          )}
+        </button>
+        <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
           {links.map((link) => (
-            <li
-              key={link.id}
-              className="nav-item"
-              aria-hidden="true"
-            >
+            <li key={link.id} onClick={() => closeMenu()} aria-hidden="true">
               <NavLink to={link.path} activeClassName="active-link" exact>
                 {link.text}
               </NavLink>
             </li>
           ))}
-        </div>
-      </ul>
-    </nav>
+        </ul>
+        <ul className="navMenuDesktop">
+          <Logo />
+          <div className="navLinks">
+            {links.map((link) => (
+              <li
+                key={link.id}
+                className="nav-item"
+                aria-hidden="true"
+              >
+                <NavLink to={link.path} activeClassName="active-link" exact>
+                  {link.text}
+                </NavLink>
+              </li>
+            ))}
+          </div>
+        </ul>
+      </nav>
+      <Outlet />
+      <Footer />
+    </>
   );
 };
 
