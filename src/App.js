@@ -4,7 +4,7 @@ import AppRoutes from './routes';
 
 const App = () => (
   <React.StrictMode>
-    <BrowserRouter basename="/math-magicians/">
+    <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>
   </React.StrictMode>
