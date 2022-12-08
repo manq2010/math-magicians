@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator component is rendererd matches snapshot 1`] = `
+<section
+  className="sc-bcXHqe kyzHPj"
+>
+  <article
+    className="sc-gswNZR bkLiuQ"
+    data-testid="total"
+  >
+    0
+  </article>
+  <div
+    className="sc-dkrFOg lmfZKB"
+    onClick={[Function]}
+    value="AC"
+  >
+    AC
+  </div>
+  <div
+    className="sc-hLBbgP kFHpQd"
+    onClick={[Function]}
+    value="+/-"
+  >
+    +/-
+  </div>
+  <div
+    className="sc-eDvSVe dpqsBJ"
+    onClick={[Function]}
+    value="%"
+  >
+    %
+  </div>
+  <div
+    className="sc-jSUZER fKsVko"
+    onClick={[Function]}
+    value="÷"
+  >
+    ÷
+  </div>
+  <div
+    className="sc-gKPRtg gUNOKr"
+    onClick={[Function]}
+    value="x"
+  >
+    *
+  </div>
+  <div
+    className="sc-iBYQkv eqtNis"
+    onClick={[Function]}
+    value="-"
+  >
+    -
+  </div>
+  <div
+    className="sc-ftTHYK gkeIwO"
+    onClick={[Function]}
+    value="+"
+  >
+    +
+  </div>
+  <div
+    className="sc-pyfCe eKEIwg"
+    onClick={[Function]}
+    value="="
+  >
+    =
+  </div>
+  <div
+    className="sc-jrcTuL cyaUWH"
+    onClick={[Function]}
+    value="0"
+  >
+    0
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="7"
+  >
+    7
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="8"
+  >
+    8
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="9"
+  >
+    9
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="4"
+  >
+    4
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="5"
+  >
+    5
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="6"
+  >
+    6
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="1"
+  >
+    1
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="2"
+  >
+    2
+  </div>
+  <div
+    className="sc-kDvujY gCicXC"
+    onClick={[Function]}
+    value="3"
+  >
+    3
+  </div>
+  <div
+    className="sc-ipEyDJ dwjWJO"
+    onClick={[Function]}
+    value="."
+  >
+    .
+  </div>
+</section>
+`;

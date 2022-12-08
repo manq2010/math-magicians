@@ -47,7 +47,7 @@ const Navbar = () => {
         <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
           {links.map((link) => (
             <li key={link.id} onClick={() => closeMenu()} aria-hidden="true">
-              <NavLink to={link.path} activeClassName="active-link" exact>
+              <NavLink data-testid={link.text} to={link.path}>
                 {link.text}
               </NavLink>
             </li>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 className="nav-item"
                 aria-hidden="true"
               >
-                <NavLink to={link.path} activeClassName="active-link" exact>
+                <NavLink to={link.path}>
                   {link.text}
                 </NavLink>
               </li>

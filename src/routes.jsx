@@ -1,6 +1,6 @@
 // LIBRARIES
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
@@ -14,17 +14,15 @@ import Homepage from './pages/Homepage';
 
 function AppRoutes() {
   return (
-    <BrowserRouter basename="/math-magicians">
-      <Routes>
-        <Route path="/" element={<Navbar />}>
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/calculator" element={<Calculatorpage />} />
-          <Route path="/qoute" element={<Qoutepage />} />
-          {/* <Route path="/" element={<Footer />} /> */}
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navbar />}>
+        <Route exact path="/" element={<Homepage />} />
+        <Route path="/calculator" element={<Calculatorpage />} />
+        <Route path="/qoute" element={<Qoutepage />} />
+        {/* <Route path="/" element={<Footer />} /> */}
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

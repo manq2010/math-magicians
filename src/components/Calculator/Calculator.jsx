@@ -187,7 +187,7 @@ function Calculator() {
 
   return (
     <CalculatorContainer>
-      <Display>
+      <Display data-testid="total">
         {next || total || 0}
       </Display>
       <Clear onClick={(e) => onClickHandler(e.target)} value="AC">AC</Clear>

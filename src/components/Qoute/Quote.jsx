@@ -16,7 +16,7 @@ function Quote() {
   return (
     <div className="qoutes">
       <blockquote>
-        <p>
+        <p data-testid="qoutes">
           {quote.quoteText}
           {' '}
           -
