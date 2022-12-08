@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component is rendererd matches snapshot 1`] = `
+<div
+  className="home-page"
+>
+  <h2>
+    Welcome to our page!
+  </h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, quidem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur perferendis neque illum, officiaquisquam quasi voluptas debitis possimus assumenda! Ipsum reprehenderit
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, quidem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur perferendis neque illum, officiaquisquam quasi voluptas debitis possimus assumenda! Ipsum reprehenderit maiores optio provident pariatur. Ipsum iure natus quisquam soluta!
+  </p>
+</div>
+`;
+
+exports[`Not-found page is rendered matches snapshot 1`] = `
+<div
+  className="not-found"
+>
+  Oops Page Not Found!
+</div>
+`;
+
+exports[`Qoute component is rendererd matches snapshot 1`] = `
+<div
+  className="qoutes"
+>
+  <blockquote>
+    <p
+      data-testid="qoutes"
+    >
+      Once we accept our limits, we go beyond them.
+       
+      -
+       
+      albert-einstein
+    </p>
+  </blockquote>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Next Quote
+  </button>
+</div>
+`;

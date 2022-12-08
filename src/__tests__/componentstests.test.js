@@ -1,6 +1,7 @@
 import { BrowserRouter, Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { render, screen, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import NotFound from '../components/NotFound/NotFound';
 import Homepage from '../pages/Homepage';
 import Quote from '../components/Qoute/Quote';
@@ -39,6 +40,11 @@ describe('Not-found page is rendered', () => {
     const container = screen.getByText(/Oops Page Not Found!/);
     expect(container).toBeInTheDocument();
   });
+
+  test('matches snapshot', () => {
+    const tree = renderer.create(<NotFound />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('HomePage component is rendererd', () => {
@@ -47,6 +53,11 @@ describe('HomePage component is rendererd', () => {
     const container = screen.getByText(/Welcome to our page!/);
     expect(container).toBeInTheDocument();
   });
+
+  test('matches snapshot', () => {
+    const tree = renderer.create(<Homepage />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('Qoute component is rendererd', () => {
@@ -54,5 +65,10 @@ describe('Qoute component is rendererd', () => {
     render(<Quote />);
     const container = screen.getByTestId(/qoutes/);
     expect(container).toBeInTheDocument();
+  });
+
+  test('matches snapshot', () => {
+    const tree = renderer.create(<Quote />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
