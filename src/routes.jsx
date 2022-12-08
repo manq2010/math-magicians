@@ -14,7 +14,7 @@ import Homepage from './pages/Homepage';
 
 function AppRoutes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/math-magicians">
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route exact path="/" element={<Homepage />} />
